@@ -188,7 +188,7 @@ def send_robot_report(username, name, task_no, result, output):
         if config["smtp"]["ssl"]:
             smtp = smtplib.SMTP_SSL()
         else:
-            smtp = smtp.SMTP()
+            smtp = smtplib.SMTP()
 
         # 连接至服务器
         smtp.connect(config["smtp"]["server"], int(config["smtp"]["port"]))
