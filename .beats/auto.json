@@ -1,1 +1,1 @@
-{"smtp": {"ssl": true, "server": "1", "port": "1", "username": "1", "password": "1"}}
+{"smtp": {"ssl": false, "server": "mail.demo.com", "port": "25", "username": "demo@demo.com", "password": "demo"}}

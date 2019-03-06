@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from auto.settings import SERVER_NAME
 
 __author__ = "苦叶子"
 
@@ -75,6 +76,7 @@ def load_all_task(app):
 
 def create_app(config_name):
     app = Flask(__name__)
+
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
@@ -83,6 +85,7 @@ def create_app(config_name):
     # mail.init_app(app)
 
     # app.config["MAIL"] = mail
+    app.config['SERVER_NAME'] = SERVER_NAME
 
     scheduler.init_app(app)
     scheduler.start()
