@@ -3,7 +3,7 @@
 import configparser
 import  logging
 import logging.config
-import os,path
+import os
 
 # cf = ConfigParser.ConfigParser()
 # cf.read(os.path.join(os.path.dirname(__file__),'conf','global.conf'))  # 读配置文件（ini、conf）返回结果是列表
