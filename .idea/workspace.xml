@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab43467d-ad90-46a2-99ca-651bd4d7e6ad" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/conf/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/global.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/linuxLogger.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conf/logger.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logControl.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/log_conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AutoLink.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AutoLink.iml" afterDir="false" />
+    <list default="true" id="ab43467d-ad90-46a2-99ca-651bd4d7e6ad" name="Default" comment="新增日志模块，方便记录日志">
+      <change afterPath="$PROJECT_DIR$/flask-session/2029240f6d1128be89ddc32729463129" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/34597b32edbadd23d8a2c9ac6a773b37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/4d26a1e4cb8faddad02eb0c68a9c1de6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/57014b709c5a9102af1d7b7ac8b33175" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/6d3be240e7a1422118572b21b16e1b53" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/80886cc555dbd1210427639a6ab755a8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/b843cc5b409fa4f03d52a5bf4ac4ec56" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/d8c0f0cb23f1dcf0aa02670d043ee072" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask-session/ffc80cb3faacb27d8e8186026da01a01" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutoLink.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoLink.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/api/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/api/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/api/case.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/api/case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/api/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/api/project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/api/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/api/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/api/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/api/task.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/api/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/api/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto/www/blueprints.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/blueprints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto/www/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto/www/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto/www/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/auto/www/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/help.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/help.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,42 +25,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto/www/app.py">
+        <entry file="file://$PROJECT_DIR$/auto/www/templates/welcome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
-              <folding>
-                <element signature="e#24#57#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="31">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto/www/api/auth.py">
+        <entry file="file://$PROJECT_DIR$/auto/www/templates/view_img.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auto/www/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-              <folding>
-                <element signature="e#93#150#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="148">
+              <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://C:/apps/installedApps/Anaconda3/Lib/site-packages/flask/globals.py">
+        <entry file="file://$PROJECT_DIR$/auto/www/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="175">
+              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auto/www/templates/default.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoLink.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="817">
               <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
               <folding>
                 <element signature="e#24#43#0" expanded="true" />
@@ -79,61 +74,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/apps/installedApps/Anaconda3/Lib/site-packages/flask_script/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
-              <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto/www/blueprints.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-              <folding>
-                <element signature="e#24#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto/www/static/lib/codemirror/mode/php/php.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="88" column="13" selection-start-line="88" selection-end-line="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto/www/api/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auto/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="221">
+              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auto/www/static/js/auto.js">
+        <entry file="file://$PROJECT_DIR$/utils/log_conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state relative-caret-position="399">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
               <folding>
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logControl.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+              <folding>
+                <element signature="e#34#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/logger.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -165,9 +142,20 @@
       <find>cookie</find>
       <find>session</find>
       <find>username</find>
+      <find>path</find>
+      <find>AutoLink/tree/master/docs</find>
+      <find>All in AutoLink</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\Users\LG\PycharmProjects\AutoLinkZG</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="kylinRao &lt;975168367@qq.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -178,30 +166,32 @@
         <option value="$PROJECT_DIR$/docs/如何创建HTTP接口测试用例.md" />
         <option value="$PROJECT_DIR$/docs/简介.md" />
         <option value="$PROJECT_DIR$/.beats/auto.json" />
-        <option value="$PROJECT_DIR$/conf/logger.conf" />
-        <option value="$PROJECT_DIR$/logControl.py" />
         <option value="$PROJECT_DIR$/auto/www/api/case.py" />
         <option value="$PROJECT_DIR$/auto/www/api/project.py" />
         <option value="$PROJECT_DIR$/auto/www/api/settings.py" />
         <option value="$PROJECT_DIR$/auto/www/api/user.py" />
         <option value="$PROJECT_DIR$/utils/help.py" />
         <option value="$PROJECT_DIR$/utils/log_conf.py" />
-        <option value="$PROJECT_DIR$/auto/www/templates/welcome.html" />
         <option value="$PROJECT_DIR$/utils/tools.py" />
         <option value="$PROJECT_DIR$/auto/www/api/task.py" />
         <option value="$PROJECT_DIR$/utils/run.py" />
         <option value="$PROJECT_DIR$/auto/www/api/auth.py" />
         <option value="$PROJECT_DIR$/auto/www/blueprints.py" />
-        <option value="$PROJECT_DIR$/auto/settings.py" />
         <option value="$PROJECT_DIR$/AutoLink.py" />
         <option value="$PROJECT_DIR$/auto/www/app.py" />
+        <option value="$PROJECT_DIR$/conf/logger.conf" />
+        <option value="$PROJECT_DIR$/auto/settings.py" />
+        <option value="$PROJECT_DIR$/logControl.py" />
+        <option value="$PROJECT_DIR$/auto/www/templates/welcome.html" />
+        <option value="$PROJECT_DIR$/auto/www/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/auto/www/templates/login.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1935" />
-    <option name="height" value="1050" />
+    <option name="x" value="-8" />
+    <option name="width" value="1548" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -232,34 +222,7 @@
               <item name="AutoLinkZG" type="462c0819:PsiDirectoryNode" />
               <item name="auto" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLinkZG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoLinkZG" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLinkZG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoLinkZG" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLinkZG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoLinkZG" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLinkZG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoLinkZG" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-              <item name="runlog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AutoLinkZG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AutoLinkZG" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,7 +266,7 @@
       <option name="presentableId" value="Default" />
       <updated>1534349381434</updated>
       <workItem from="1551882894104" duration="12118000" />
-      <workItem from="1552138800138" duration="8206000" />
+      <workItem from="1552138800138" duration="16400000" />
     </task>
     <task id="LOCAL-00001" summary="auth和user的部分tests">
       <created>1534781001096</created>
@@ -333,16 +296,38 @@
       <option name="project" value="LOCAL" />
       <updated>1551883466891</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="新增日志模块，方便记录日志">
+      <created>1552204622742</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552204622742</updated>
+    </task>
+    <task id="LOCAL-00006" summary="日志模块升级，当不存在日志目录时，自动创建日志目录">
+      <created>1552215482136</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1552215482136</updated>
+    </task>
+    <task id="LOCAL-00007" summary="去掉path模块引用">
+      <created>1552215875798</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552215875798</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20324000" />
+    <option name="totallyTimeSpent" value="28518000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19571045" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15565032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -352,7 +337,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49776787" visible="true" weight="0.37569833" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49776787" visible="true" weight="0.46995708" />
       <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.49776787" weight="0.3282123" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4985119" weight="0.325419" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50223213" side_tool="true" weight="0.32838285" />
@@ -372,7 +357,10 @@
     <MESSAGE value="auth和user的部分tests" />
     <MESSAGE value="上传http接口测试demo和文档" />
     <MESSAGE value="1/修复邮箱发送working out of content bug&#10;2/修复auto.json配置文件没有默认json参数结构的bug&#10;3/增加setting文件里的SEVER_NAME的定义" />
-    <option name="LAST_COMMIT_MESSAGE" value="1/修复邮箱发送working out of content bug&#10;2/修复auto.json配置文件没有默认json参数结构的bug&#10;3/增加setting文件里的SEVER_NAME的定义" />
+    <MESSAGE value="新增日志模块，方便记录日志" />
+    <MESSAGE value="日志模块升级，当不存在日志目录时，自动创建日志目录" />
+    <MESSAGE value="去掉path模块引用" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉path模块引用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,64 +373,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.beats/auto.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="114" selection-start-column="114" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staticVar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/global.conf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeStats.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/apps/installedApps/Anaconda3/Lib/configparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="695" selection-start-line="695" selection-end-line="695" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/linuxLogger.conf">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/apps/installedApps/Anaconda3/Lib/logging/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/logger.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logControl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#34#53#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,16 +471,6 @@
     <entry file="file://$PROJECT_DIR$/logs/file/file.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/log_conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/parsing.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -561,13 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -609,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto/www/templates/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logs/runlog/run.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -627,13 +540,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="155" column="22" lean-forward="true" selection-start-line="155" selection-start-column="22" selection-end-line="155" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auto/www/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="140" column="30" selection-start-line="140" selection-start-column="30" selection-end-line="140" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -671,13 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/apps/installedApps/Anaconda3/Lib/site-packages/flask_script/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="824">
@@ -685,29 +584,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto/www/app.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#24#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AutoLink.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding>
-            <element signature="e#24#43#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="342">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/auto/www/api/auth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
+        <state relative-caret-position="855">
           <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
           <folding>
             <element signature="e#93#150#0" expanded="true" />
@@ -715,10 +601,108 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auto/www/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding>
+            <element signature="e#24#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/apps/installedApps/Anaconda3/Lib/site-packages/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="335">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/apps/installedApps/Anaconda3/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-403">
+          <caret line="1347" column="26" selection-start-line="1347" selection-start-column="26" selection-end-line="1347" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/tools.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/apps/installedApps/Anaconda3/Lib/logging/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="140" column="8" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/logger.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoLink.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="817">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <element signature="e#24#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/log_conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logControl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding>
+            <element signature="e#34#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/www/templates/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/www/templates/view_img.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/www/templates/default.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/www/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto/www/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
         </state>
       </provider>
     </entry>
