@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from utils.tools import run_log_decorate
 
 __author__ = "苦叶子"
 
@@ -34,10 +35,10 @@ class Project(Resource):
         self.parser.add_argument('cron', type=str, default="* * * * * *")
         self.parser.add_argument('boolean', type=str, default="启用")
         self.app = current_app._get_current_object()
-
+    @run_log_decorate
     def get(self):
         args = self.parser.parse_args()
-
+    @run_log_decorate
     def post(self):
         args = self.parser.parse_args()
 
@@ -51,6 +52,7 @@ class Project(Resource):
 
         return result, 201
 
+    @run_log_decorate
     def __create(self, args):
         result = {"status": "success", "msg": "创建项目成功"}
 
@@ -75,6 +77,7 @@ class Project(Resource):
 
         return result
 
+    @run_log_decorate
     def __edit(self, args):
         result = {"status": "success", "msg": "项目重命名成功"}
         old_name = self.app.config["AUTO_HOME"] + "/workspace/%s/%s" % (session["username"], args["name"])
@@ -98,6 +101,7 @@ class Project(Resource):
 
         return result
 
+    @run_log_decorate
     def __delete(self, args):
         result = {"status": "success", "msg": "项目删除成功"}
         user_path = self.app.config["AUTO_HOME"] + "/workspace/%s/%s" % (session["username"], args["name"])
@@ -122,6 +126,7 @@ class ProjectList(Resource):
         self.parser.add_argument('splitext', type=str)
         self.app = current_app._get_current_object()
 
+    @run_log_decorate
     def get(self):
         args = self.parser.parse_args()
 
@@ -161,7 +166,7 @@ class ProjectList(Resource):
             "children": children}]
         """
 
-
+@run_log_decorate
 def create_project(app, username, project):
     user_path = app.config["AUTO_HOME"] + "/users/" + username
     if os.path.exists(user_path):
@@ -169,7 +174,7 @@ def create_project(app, username, project):
         config["data"].append(project)
         json.dump(config, codecs.open(user_path + '/config.json', 'w', 'utf-8'))
 
-
+@run_log_decorate
 def edit_project(app, username, old_name, new_project):
     user_path = app.config["AUTO_HOME"] + "/users/" + username
     if os.path.exists(user_path):
@@ -185,7 +190,7 @@ def edit_project(app, username, old_name, new_project):
 
     json.dump(config, codecs.open(user_path + '/config.json', 'w', 'utf-8'))
 
-
+@run_log_decorate
 def remove_project(app, username, name):
     user_path = app.config["AUTO_HOME"] + "/users/" + username
     if os.path.exists(user_path):
@@ -199,7 +204,7 @@ def remove_project(app, username, name):
 
     json.dump(config, codecs.open(user_path + '/config.json', 'w', 'utf-8'))
 
-
+@run_log_decorate
 def get_project_list(app, username):
     work_path = app.config["AUTO_HOME"] + "/workspace/" + username
     if os.path.exists(work_path):
@@ -211,7 +216,7 @@ def get_project_list(app, username):
 
     return []
 
-
+@run_log_decorate
 def get_project_detail(app, username, p_name):
     path = app.config["AUTO_HOME"] + "/workspace/" + username + "/" + p_name
 
@@ -256,7 +261,7 @@ def get_project_detail(app, username, p_name):
 
     return projects
 
-
+@run_log_decorate
 def get_projects(app, username):
     projects = get_project_list(app, username)
     children = []
@@ -277,7 +282,7 @@ def get_projects(app, username):
         },
         "children": children}]
 
-
+@run_log_decorate
 def get_suite_by_project(app, username, args):
     path = app.config["AUTO_HOME"] + "/workspace/" + username + "/" + args["name"]
 
@@ -301,7 +306,7 @@ def get_suite_by_project(app, username, args):
 
     return children
 
-
+@run_log_decorate
 def get_case_by_suite(app, username, args):
     path = app.config["AUTO_HOME"] + "/workspace/" + username + "/%s/%s" % (args["project"], args["name"] )
 
@@ -334,7 +339,7 @@ def get_case_by_suite(app, username, args):
 
     return children
 
-
+@run_log_decorate
 def get_step_by_case(app, username, args):
     print(args)
     path = app.config["AUTO_HOME"] + "/workspace/" + username + "/%s/%s/%s%s" % (args["project"], args["suite"], args["name"], args["splitext"])

@@ -15,14 +15,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import json
 import os
 import codecs
-
+from utils.tools import run_log_decorate,Tools
 
 class Auth(Resource):
     def __init__(self):
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('username', type=str)
         self.parser.add_argument('password', type=str)
-
+    @run_log_decorate
     def get(self):
         args = self.parser.parse_args()
         username = args["username"]
@@ -32,10 +32,12 @@ class Auth(Resource):
 
         return {"status": "success", "msg": "logout success", "url": url_for('routes.index')}, 201
 
+    @run_log_decorate
     def post(self):
         args = self.parser.parse_args()
         username = args["username"]
         password = args["password"]
+        Tools.runLogHander.debug("username："+username+"    "+"password:"+password)
         app = current_app._get_current_object()
         user_path = app.config["AUTO_HOME"] + "/users/" + username
         if os.path.exists(user_path):

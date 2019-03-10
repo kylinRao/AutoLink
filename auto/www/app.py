@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+from flask_session import Session
+
 from auto.settings import SERVER_NAME
+from utils.tools import Tools, run_log_decorate
 
 __author__ = "苦叶子"
 
@@ -27,8 +30,9 @@ scheduler = APScheduler()
 login_manager = LoginManager()
 login_manager.login_view = 'auto.login'
 
-
+@run_log_decorate
 def load_all_task(app):
+
     with app.app_context():
         user_path = app.config["AUTO_HOME"] + "/users/"
         users = list_dir(user_path)
@@ -74,9 +78,9 @@ def load_all_task(app):
                                           day_of_week=cron[5])
 
 
+@run_log_decorate
 def create_app(config_name):
     app = Flask(__name__)
-
     app.config.from_object(config[config_name])
     config[config_name].init_app(app)
 
@@ -86,6 +90,20 @@ def create_app(config_name):
 
     # app.config["MAIL"] = mail
     app.config['SERVER_NAME'] = SERVER_NAME
+    app.config['DEBUG'] = True
+    app.secret_key = 'xxxx'
+
+    app.config['SESSION_TYPE'] = 'filesystem'  # session类型为redis
+    app.config['SESSION_FILE_DIR'] = './flask-session'  # session类型为redis
+    app.config['SESSION_FILE_THRESHOLD'] = 500  # 存储session的个数如果大于这个值时，就要开始进行删除了
+    app.config['SESSION_FILE_MODE'] = 384  # 文件权限类型
+
+    app.config['SESSION_PERMANENT'] = True  # 如果设置为True，则关闭浏览器session就失效。
+    app.config['SESSION_USE_SIGNER'] = False  # 是否对发送到浏览器上session的cookie值进行加密
+    app.config['SESSION_KEY_PREFIX'] = 'session:'  # 保存到session中的值的前缀
+    Session(app)
+
+
 
     scheduler.init_app(app)
     scheduler.start()

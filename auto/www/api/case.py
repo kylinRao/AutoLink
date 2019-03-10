@@ -15,7 +15,7 @@ from urllib.parse import quote
 from flask import current_app, session, request, send_file, make_response
 from flask_restful import Resource, reqparse
 import werkzeug
-
+from utils.tools import run_log_decorate
 from utils.file import exists_path, rename_file, make_nod, remove_file, write_file, read_file, get_splitext
 
 
@@ -32,7 +32,7 @@ class Case(Resource):
         self.parser.add_argument('path', type=str)
         self.parser.add_argument('data', type=str)
         self.app = current_app._get_current_object()
-
+    @run_log_decorate
     def get(self):
         args = self.parser.parse_args()
         result = {"status": "success", "msg": "读取文件成功"}
@@ -49,7 +49,7 @@ class Case(Resource):
         result["data"] = data["data"]
 
         return result, 201
-
+    @run_log_decorate
     def post(self):
         args = self.parser.parse_args()
 
@@ -66,7 +66,7 @@ class Case(Resource):
             print(request.files["files"])
 
         return result, 201
-
+    @run_log_decorate
     def __create(self, args):
         result = {"status": "success", "msg": "创建文件成功"}
         user_path = self.app.config["AUTO_HOME"] + "/workspace/%s/%s/%s/%s%s" % (session["username"],
@@ -81,7 +81,7 @@ class Case(Resource):
             result["msg"] = "文件名称重复，创建失败"
 
         return result
-
+    @run_log_decorate
     def __edit(self, args):
         result = {"status": "success", "msg": "文件重命名成功"}
         old_name = self.app.config["AUTO_HOME"] + "/workspace/%s/%s/%s/%s%s" % (session["username"],
@@ -101,7 +101,7 @@ class Case(Resource):
             result["msg"] = "文件重命名失败，名称重复"
 
         return result
-
+    @run_log_decorate
     def __delete(self, args):
         result = {"status": "success", "msg": "目录删除成功"}
         user_path = self.app.config["AUTO_HOME"] + "/workspace/%s/%s/%s/%s%s" % (session["username"],
@@ -117,7 +117,7 @@ class Case(Resource):
             result["msg"] = "删除失败，不存在的文件"
 
         return result
-
+    @run_log_decorate
     def __save(self, args):
         result = {"status": "success", "msg": "保存成功"}
 
@@ -136,7 +136,7 @@ class ManageFile(Resource):
         self.parser.add_argument('data', type=str)
         self.parser.add_argument('file', type=werkzeug.datastructures.FileStorage, location='files', action='append')
         self.app = current_app._get_current_object()
-
+    @run_log_decorate
     def post(self):
         args = request.form.to_dict()
         print(args)
@@ -146,7 +146,7 @@ class ManageFile(Resource):
             return self.__upload(file, args['path']), 201
         elif method == "download":
             return self.__download(args)
-
+    @run_log_decorate
     def __upload(self, file, path):
         result = {"status": "success", "msg": "上传成功"}
 
@@ -158,7 +158,7 @@ class ManageFile(Resource):
             result["msg"] = "上传失败"
 
         return result
-
+    @run_log_decorate
     def __download(self, args):
         user_path = self.app.config["AUTO_HOME"] + "/workspace/%s" % session['username'] + args["path"]
 

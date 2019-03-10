@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import g
 
+from utils.tools import Tools
+
 __author__ = "苦叶子"
 
 """
@@ -20,6 +22,7 @@ from auto.settings import HEADER
 from utils.help import check_version
 from staticVar import staticVar
 
+
 if sys.platform.startswith("linux") or sys.platform.startswith("darwin"):
     os.environ["PATH"] = os.environ["PATH"] + ":" + os.getcwd() + "/driver"
 else:
@@ -34,10 +37,12 @@ staticVar.initapp = app
 
 
 if __name__ == '__main__':
+    Tools.runLogHander.debug(__file__)
+    Tools.runLogHander.debug(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
     check_version()
-
     load_all_task(app)
-
     manager.run()
+
 

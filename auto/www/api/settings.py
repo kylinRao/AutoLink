@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from utils.tools import run_log_decorate
 
 __author__ = "苦叶子"
 
@@ -30,6 +31,7 @@ class Settings(Resource):
         self.parser.add_argument('fail_list', type=str)
         self.app = current_app._get_current_object()
 
+    @run_log_decorate
     def get(self):
         args = self.parser.parse_args()
         method = args["method"]
@@ -57,6 +59,7 @@ class Settings(Resource):
 
         return result
 
+    @run_log_decorate
     def post(self):
         args = self.parser.parse_args()
         method = args["method"]
@@ -69,6 +72,7 @@ class Settings(Resource):
         return result, 201
 
     # 配置smtp
+    @run_log_decorate
     def __smtp(self, args):
         result = {"status": "success", "msg": "配置smtp服务成功"}
         conf_path = self.app.config["AUTO_HOME"] + "/auto.json"
@@ -95,6 +99,7 @@ class Settings(Resource):
         return result
 
     # 设置email通知列表
+    @run_log_decorate
     def __email(self, args):
         result = {"status": "success", "msg": "配置smtp服务成功"}
 

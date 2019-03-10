@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 __author__ = "苦叶子"
 
 """
@@ -9,9 +10,10 @@ __author__ = "苦叶子"
 Email: lymking@foxmail.com
 
 """
+
 import sys
 import codecs
-from flask import current_app, session, url_for
+from flask import current_app, session, url_for, g
 from flask_mail import Mail, Message
 import threading
 from threading import Thread
@@ -25,9 +27,11 @@ import json
 from robot.api import TestSuiteBuilder, ResultWriter, ExecutionResult
 
 from utils.file import exists_path, make_nod, write_file, read_file, mk_dirs
+from staticVar import staticVar
 
 
 def robot_job(app, name, username):
+
     with app.app_context():
         project = app.config["AUTO_HOME"] + "/workspace/%s/%s" % (username, name)
         output = app.config["AUTO_HOME"] + "/jobs/%s/%s" % (username, name)
@@ -140,66 +144,67 @@ def is_run(app, name):
     return False
 
 
-def send_robot_report(username, name, task_no, result, output):
-    app = current_app._get_current_object()
-    build_msg = "<font color='green'>Success</font>"
-    if result.statistics.total.critical.failed != 0:
-        build_msg = "<font color='red'>Failure</font>"
+def send_robot_report( username, name, task_no, result, output):
+    with staticVar.initapp.app_context():
+        app = current_app._get_current_object()
+        build_msg = "<font color='green'>Success</font>"
+        if result.statistics.total.critical.failed != 0:
+            build_msg = "<font color='red'>Failure</font>"
 
-    report_url = url_for("routes.q_view_report",
-                         _external=True,
-                         username=username,
-                         project=name,
-                         task=task_no)
-    msg = MIMEText("""Hello, %s<hr>
-                项目名称：%s<hr>
-                构建编号: %s<hr>
-                构建状态: %s<hr>
-                持续时间: %s毫秒<hr>
-                详细报告: <a href='%s'>%s</a><hr>
-                构建日志: <br>%s<hr><br><br>
-                (本邮件是程序自动下发的，请勿回复！)""" %
-                   (username,
-                    result.statistics.suite.stat.name,
-                    task_no,
-                    build_msg,
-                    result.suite.elapsedtime,
-                    report_url, report_url,
-                    codecs.open(output + "/debug.txt", "r", "utf-8").read().replace("\n", "<br>")
-                    ),
-                   "html", "utf-8")
+        report_url = url_for("routes.q_view_report",
+                             _external=True,
+                             username=username,
+                             project=name,
+                             task=task_no)
+        msg = MIMEText("""Hello, %s<hr>
+                    项目名称：%s<hr>
+                    构建编号: %s<hr>
+                    构建状态: %s<hr>
+                    持续时间: %s毫秒<hr>
+                    详细报告: <a href='%s'>%s</a><hr>
+                    构建日志: <br>%s<hr><br><br>
+                    (本邮件是程序自动下发的，请勿回复！)""" %
+                       (username,
+                        result.statistics.suite.stat.name,
+                        task_no,
+                        build_msg,
+                        result.suite.elapsedtime,
+                        report_url, report_url,
+                        codecs.open(output + "/debug.txt", "r", "utf-8").read().replace("\n", "<br>")
+                        ),
+                       "html", "utf-8")
 
-    msg["Subject"] = Header("AutoLink通知消息", "utf-8")
+        msg["Subject"] = Header("AutoLink通知消息", "utf-8")
 
-    try:
-        user_path = app.config["AUTO_HOME"] + "/users/%s/config.json" % session["username"]
-        user_conf = json.load(codecs.open(user_path, 'r', 'utf-8'))
-        for p in user_conf["data"]:
-            if p["name"] == name:
-                if result.statistics.total.critical.failed != 0:
-                    msg["To"] = p["fail_list"]
-                else:
-                    msg["To"] = p["success_list"]
-                break
+        try:
+            user_path = app.config["AUTO_HOME"] + "/users/%s/config.json" % username
+            user_conf = json.load(codecs.open(user_path, 'r', 'utf-8'))
+            for p in user_conf["data"]:
+                if p["name"] == name:
+                    if result.statistics.total.critical.failed != 0:
+                        msg["To"] = p["fail_list"]
+                    else:
+                        msg["To"] = p["success_list"]
+                    break
 
-        conf_path = app.config["AUTO_HOME"] + "/auto.json"
-        config = json.load(codecs.open(conf_path, 'r', 'utf-8'))
-        msg["From"] = config["smtp"]["username"]
-        if config["smtp"]["ssl"]:
-            smtp = smtplib.SMTP_SSL()
-        else:
-            smtp = smtplib.SMTP()
+            conf_path = app.config["AUTO_HOME"] + "/auto.json"
+            config = json.load(codecs.open(conf_path, 'r', 'utf-8'))
+            msg["From"] = config["smtp"]["username"]
+            if config["smtp"]["ssl"]:
+                smtp = smtplib.SMTP_SSL()
+            else:
+                smtp = smtplib.SMTP()
 
-        # 连接至服务器
-        smtp.connect(config["smtp"]["server"], int(config["smtp"]["port"]))
-        # 登录
-        smtp.login(config["smtp"]["username"], config["smtp"]["password"])
-        # 发送邮件
-        smtp.sendmail(msg["From"], msg["To"].split(","), msg.as_string().encode("utf8"))
-        # 断开连接
-        smtp.quit()
-    except Exception as e:
-        print("邮件发送错误: %s" % e)
+            # 连接至服务器
+            smtp.connect(config["smtp"]["server"], int(config["smtp"]["port"]))
+            # 登录
+            smtp.login(config["smtp"]["username"], config["smtp"]["password"])
+            # 发送邮件
+            smtp.sendmail(msg["From"], msg["To"].split(","), msg.as_string().encode("utf8"))
+            # 断开连接
+            smtp.quit()
+        except Exception as e:
+            print("邮件发送错误: %s" % e)
 
 
 class RobotRun(threading.Thread):
@@ -233,57 +238,4 @@ class RobotRun(threading.Thread):
         # self.reset_last_status(index)
 
         # Report and xUnit files can be generated based on the result object.
-        # ResultWriter(self.result).write_results(report=output + '/report.html', log=output + '/log.html')
-
-        # self.lock.release()
-
-        # Generating log files requires processing the earlier generated output XML.
-        # ResultWriter(self.output + '/output.xml').write_results()
-
-        self.result = ExecutionResult(out + "/output.xml")
-
-        self.reset_last_status(self.result, output, index)
-
-        # Report and xUnit files can be generated based on the result object.
-        ResultWriter(self.result).write_results(report=out + '/report.html', log=out + '/log.html')
-
-    def reset_next_build_numb(self):
-
-        next_build_number = self.output + "/nextBuildNumber"
-        index = 1
-        data = "%d" % (index + 1)
-        if not exists_path(next_build_number):
-            make_nod(next_build_number)
-        else:
-            index = int(read_file(next_build_number)["data"])
-            data = "%d" % (index + 1)
-        write_file(next_build_number, data)
-
-        output = self.output + "/%d" % index
-        if not exists_path(output):
-            mk_dirs(output)
-
-        return (output, index)
-
-    def reset_last_status(self, index):
-        stats = self.result.statistics
-        fail = stats.total.critical.failed
-
-        lock = threading.Lock()
-
-        lock.acquire()
-        last_fail = self.output + "/lastFail"
-        last_passed = self.output + "/lastPassed"
-        data = "%d" % index
-
-        if fail != 0:
-            if not exists_path(last_fail):
-                make_nod(last_fail)
-
-            write_file(last_fail, data)
-        else:
-            if not exists_path(last_passed):
-                make_nod(last_passed)
-            write_file(last_passed, data)
-
-        lock.release()
+        # ResultWriter(self.result

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from utils.tools import run_log_decorate
 
 __author__ = "苦叶子"
 
@@ -13,12 +14,13 @@ Email: lymking@foxmail.com
 import codecs
 import requests
 
-
+@run_log_decorate
 def check_version():
     f = codecs.open('version.txt', 'r')
     version = f.readline()
-    s = requests.Session()
-    r_version = s.get("https://gitee.com/lym51/AutoLink/raw/master/version.txt").text
+    # s = requests.Session()
+    # r_version = s.get("https://gitee.com/lym51/AutoLink/raw/master/version.txt").text
+    r_version = "1.0.12"
     if version != r_version:
         print("*" * 25)
         print("本地版本：v%s" % version)

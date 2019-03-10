@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from utils.tools import run_log_decorate
 
 __author__ = "苦叶子"
 
@@ -30,6 +31,7 @@ class User(Resource):
         self.parser.add_argument('fullname', type=str)
         self.app = current_app._get_current_object()
 
+    @run_log_decorate
     def get(self):
         user_list = {"total": 0, "rows": []}
         user_path = self.app.config["AUTO_HOME"] + "/users"
@@ -47,6 +49,7 @@ class User(Resource):
 
         return user_list
 
+    @run_log_decorate
     def post(self):
         args = self.parser.parse_args()
 
@@ -64,6 +67,7 @@ class User(Resource):
 
         return result, 201
 
+    @run_log_decorate
     def __create(self, args):
         result = {"status": "success", "msg": "创建用户成功"}
         user_path = self.app.config["AUTO_HOME"] + "/users/%s" % (args["username"])
@@ -83,6 +87,7 @@ class User(Resource):
 
         return result
 
+    @run_log_decorate
     def __edit(self, args):
 
         result = {"status": "success", "msg": "用户信息修改成功"}
@@ -103,6 +108,7 @@ class User(Resource):
 
         return result
 
+    @run_log_decorate
     def __delete(self, args):
         result = {"status": "success", "msg": "用户删除成功"}
         user_path = self.app.config["AUTO_HOME"] + "/users/" + args["username"]
@@ -121,6 +127,7 @@ class User(Resource):
 
         return result
 
+    @run_log_decorate
     def __save(self, args):
         result = {"status": "success", "msg": "保存成功"}
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from utils.tools import run_log_decorate
 
 __author__ = "苦叶子"
 
@@ -36,6 +37,7 @@ class Task(Resource):
         self.parser.add_argument('case', type=str)
         self.parser.add_argument('task_no', type=str)
         self.app = current_app._get_current_object()
+
 
     def post(self):
         args = self.parser.parse_args()
@@ -88,11 +90,13 @@ class TaskList(Resource):
         self.parser.add_argument('cron', type=str)
         self.app = current_app._get_current_object()
 
+    @run_log_decorate
     def get(self):
         args = self.parser.parse_args()
         project = args["name"]
 
         return get_task_list(self.app, session['username'], project)
+
 
     def post(self):
         args = self.parser.parse_args()
@@ -315,7 +319,6 @@ def get_all_task(app):
 
     return task_list
 
-
 def get_last_pass(job_path):
     passed = "无"
     passed_path = job_path + "lastPassed"
@@ -327,7 +330,6 @@ def get_last_pass(job_path):
         f.close()
 
     return passed
-
 
 def get_last_fail(job_path):
     fail = "无"
@@ -362,7 +364,6 @@ def get_next_time(app, name):
         return job.next_run_time.astimezone(to_zone).strftime("%Y-%m-%d %H:%M:%S")
     else:
         return "-"
-
 
 def edit_cron(app, name, cron):
     user_path = app.config["AUTO_HOME"] + "/users/" + session["username"]
